@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Montserrat", sans-serif;
+}
+
+.menu{
+  grid-area: menu;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1.5rem;
+}
+
+.logo{
+  text-decoration: none;
+  color: #FFFFFF;
+  padding-left: 0.2rem;
+  font-weight: 700;
+}
+
+.list-menu{
+  display: none;
+}
+
+.list-menu ul{
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+ul a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+i{
+  cursor: pointer;
+}
+
+.logo:hover, i:hover, ul a:hover{
+  color: #F9F871;
+}
+
+.filter{
+  grid-area: filter;
+  background-color: #F9F871;
+  padding: 0.5rem;
+}
+
+.filter-container{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.filter-title{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.products{
+  border-radius: 0.3rem;
+  width: 200px;
+  padding: 0.2rem;
+  font-weight: 700;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+section{
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.product-container{
+  padding: 2rem 1rem;
+}
+
+.card-container, .card-dsktop{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: solid #000000;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.card-dsktop{
+  display: none;
+}
+
+.img-container{
+  height: 300px;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-title h4{
+  font-size: 1.5rem;
+}
+
+.card-title, .card-price{
+  padding: 0 1rem;
+}
+
+.btn-card{
+  width: 100%;
+}
+
+.button{
+  width: 100%;
+  color: #FEFEFE;
+  background-color: #101010;
+  padding: 0.5rem 0;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.button:hover{
+  background-color: #F9F871;
+  transition: .4s ease-in-out;
+  color: #000000;
+  font-weight: 700;
+}
+
+.card-price p{
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.checked {
+  color: orange;
+}
+
+.pages-container{
+  display: flex;
+  gap: 2rem;
+}
+
+.previous,.next{
+  text-decoration: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+  background-color: #F9F871;
+  color: #000000;
+}
+
+.previous:hover,.next:hover{
+  background-color: #000000;
+  color: #FFFFFF;
+  transition: .4s ease-in;
+}
+
+.next{
+  width: 110px;
+}
+
+footer{
+  grid-area: footer;
+  background-color: #000000;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 0.8rem;
+}
+
+.contact i{
+  padding: 0.2rem;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-areas:
+  "menu menu"
+  "filter filter"
+  "main main"
+  "footer footer";
+  grid-template-columns: auto;
+
+}
+
+@media (min-width: 576px){
+  .grid-container{
+    grid-template-areas:
+    "menu filter filter"
+    "menu main main"
+    "footer main main";
+    grid-template-columns: 1fr 8fr;
+  }
+
+  .menu{
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 4rem;
+  }
+
+  .logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .list-menu{
+    display: flex;
+  }
+
+  .list-menu ul{
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .menu-hamburger{
+    display: none;
+  }
+
+  .products{
+    width: 500px;
+  }
+
+  .product-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-row: 1fr 1fr;
+    gap: 1rem;
+  }
+  .card-dsktop{
+    display: flex;
+  }
+  .rights{
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px){
+  .product-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .products{
+    width: 700px;
+  }
+
+  .rights{
+    text-align: center;
+  }
+}
